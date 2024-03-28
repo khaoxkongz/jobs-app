@@ -6,6 +6,7 @@ export interface CardProps {
 export interface HeroProps {
   title?: string
   subtitle?: string
+}
 
 export interface NavBarProps {
   isActive: boolean
