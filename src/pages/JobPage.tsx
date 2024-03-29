@@ -1,12 +1,27 @@
-import { useLoaderData } from 'react-router-dom'
+import { useLoaderData, useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+
+import { toast } from 'react-toastify'
 
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa'
 
 import { JobsDto } from '../interfaces/job.dto'
+import { JobPageProps } from '../interfaces/page'
 
-const JobPage = () => {
+const JobPage = ({ deleteJob }: JobPageProps) => {
+  const navigate = useNavigate()
+
   const job = useLoaderData() as JobsDto
+
+  const onDeleteClick = (jobId: string) => {
+    const confirm = window.confirm('Are you sure you want to delete this listing?')
+
+    if (!confirm) return
+
+    deleteJob(jobId)
+    toast.success('Job deleted successfully')
+    navigate('/jobs')
+  }
 
   return (
     <>
@@ -70,7 +85,10 @@ const JobPage = () => {
                 >
                   Edit Job
                 </Link>
-                <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
+                <button
+                  onClick={() => onDeleteClick(job.id)}
+                  className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
+                >
                   Delete Job
                 </button>
               </div>
