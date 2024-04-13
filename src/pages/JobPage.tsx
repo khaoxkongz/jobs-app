@@ -1,27 +1,27 @@
-import { useLoaderData, useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
 
-import { FaArrowLeft, FaMapMarker } from 'react-icons/fa'
+import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 
-import { JobsDto } from '../interfaces/job.dto'
-import { JobPageProps } from '../interfaces/page'
+import { JobsDto } from '../interfaces/job.dto';
+import { JobPageProps } from '../interfaces/page';
 
 const JobPage = ({ deleteJob }: JobPageProps) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const job = useLoaderData() as JobsDto
+  const job = useLoaderData() as JobsDto;
 
   const onDeleteClick = (jobId: string) => {
-    const confirm = window.confirm('Are you sure you want to delete this listing?')
+    const confirm = window.confirm('Are you sure you want to delete this listing?');
 
-    if (!confirm) return
+    if (!confirm) return;
 
-    deleteJob(jobId)
-    toast.success('Job deleted successfully')
-    navigate('/jobs')
-  }
+    deleteJob(jobId);
+    toast.success('Job deleted successfully');
+    navigate('/jobs');
+  };
 
   return (
     <>
@@ -97,7 +97,7 @@ const JobPage = ({ deleteJob }: JobPageProps) => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default JobPage
+export default JobPage;

@@ -1,31 +1,31 @@
-import { useState } from 'react'
-import { useParams, useLoaderData, useNavigate } from 'react-router-dom'
+import { useState } from 'react';
+import { useParams, useLoaderData, useNavigate } from 'react-router-dom';
 
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
 
-import { EditJobPageProps } from '../interfaces/page'
-import { JobsDto } from '../interfaces/job.dto'
+import { EditJobPageProps } from '../interfaces/page';
+import { JobsDto } from '../interfaces/job.dto';
 
 const EditJobPage = ({ updateJobSubmit }: EditJobPageProps) => {
-  const { id } = useParams()
-  const job = useLoaderData() as JobsDto
+  const { id } = useParams();
+  const job = useLoaderData() as JobsDto;
 
-  if (!id) throw new Error('Some thing went wrong')
+  if (!id) throw new Error('Some thing went wrong');
 
-  const [title, setTitle] = useState(job.title)
-  const [type, setType] = useState(job.type)
-  const [location, setLocation] = useState(job.location)
-  const [description, setDescription] = useState(job.description)
-  const [salary, setSalary] = useState(job.salary)
-  const [companyName, setCompanyName] = useState(job.company.name)
-  const [companyDescription, setCompanyDescription] = useState(job.company.description)
-  const [contactEmail, setContactEmail] = useState(job.company.contactEmail)
-  const [contactPhone, setContactPhone] = useState(job.company.contactPhone)
+  const [title, setTitle] = useState(job.title);
+  const [type, setType] = useState(job.type);
+  const [location, setLocation] = useState(job.location);
+  const [description, setDescription] = useState(job.description);
+  const [salary, setSalary] = useState(job.salary);
+  const [companyName, setCompanyName] = useState(job.company.name);
+  const [companyDescription, setCompanyDescription] = useState(job.company.description);
+  const [contactEmail, setContactEmail] = useState(job.company.contactEmail);
+  const [contactPhone, setContactPhone] = useState(job.company.contactPhone);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const updatedJob = {
       id,
@@ -40,14 +40,14 @@ const EditJobPage = ({ updateJobSubmit }: EditJobPageProps) => {
         contactEmail,
         contactPhone,
       },
-    }
+    };
 
-    updateJobSubmit(updatedJob)
+    updateJobSubmit(updatedJob);
 
-    toast.success('Job Updated Successfully')
+    toast.success('Job Updated Successfully');
 
-    return navigate(`/jobs/${id}`)
-  }
+    return navigate(`/jobs/${id}`);
+  };
 
   return (
     <section className="bg-indigo-50">
@@ -217,7 +217,7 @@ const EditJobPage = ({ updateJobSubmit }: EditJobPageProps) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default EditJobPage
+export default EditJobPage;

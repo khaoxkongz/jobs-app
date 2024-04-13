@@ -1,13 +1,13 @@
-import { NavLink } from 'react-router-dom'
-import { NavBarProps } from '../interfaces/component'
-import logo from '../assets/images/logo.png'
+import { NavLink } from 'react-router-dom';
+import { NavBarProps } from '../interfaces/component';
+import logo from '../assets/images/logo.png';
 
 const Navbar = () => {
   const linkClass = ({ isActive }: NavBarProps) => {
     return isActive
       ? 'text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
-      : 'text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
-  }
+      : 'text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2';
+  };
 
   return (
     <nav className="bg-indigo-700 border-b border-indigo-500">
@@ -36,7 +36,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import Card from './Card'
+import { Link } from 'react-router-dom';
+import Card from './Card';
 
 const HomeCards = () => {
   return (
@@ -26,7 +26,7 @@ const HomeCards = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HomeCards
+export default HomeCards;

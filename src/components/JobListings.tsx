@@ -1,11 +1,11 @@
-import Spinner from './Spinner'
-import JobListing from './JobListing'
-import useJobListings from '../hook/useJobListings'
+import Spinner from './Spinner';
+import JobListing from './JobListing';
+import useJobListings from '../hook/useJobListings';
 
-import { JobListingsProps } from '../interfaces/component'
+import { JobListingsProps } from '../interfaces/component';
 
 const JobListings = ({ isHome = false }: JobListingsProps) => {
-  const { jobs, loading } = useJobListings({ isHome })
+  const { jobs, loading } = useJobListings({ isHome });
 
   return (
     <section className="bg-blue-50 px-4 py-10">
@@ -23,7 +23,7 @@ const JobListings = ({ isHome = false }: JobListingsProps) => {
         )}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default JobListings
+export default JobListings;

@@ -1,25 +1,25 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
 
-import { AddJobPageProps } from '../interfaces/page'
+import { AddJobPageProps } from '../interfaces/page';
 
 const AddJobPage = ({ addJobSubmit }: AddJobPageProps) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const [title, setTitle] = useState('')
-  const [type, setType] = useState('Full-Time')
-  const [location, setLocation] = useState('')
-  const [description, setDescription] = useState('')
-  const [salary, setSalary] = useState('Under $50K')
-  const [companyName, setCompanyName] = useState('')
-  const [companyDescription, setCompanyDescription] = useState('')
-  const [contactEmail, setContactEmail] = useState('')
-  const [contactPhone, setContactPhone] = useState('')
+  const [title, setTitle] = useState('');
+  const [type, setType] = useState('Full-Time');
+  const [location, setLocation] = useState('');
+  const [description, setDescription] = useState('');
+  const [salary, setSalary] = useState('Under $50K');
+  const [companyName, setCompanyName] = useState('');
+  const [companyDescription, setCompanyDescription] = useState('');
+  const [contactEmail, setContactEmail] = useState('');
+  const [contactPhone, setContactPhone] = useState('');
 
   const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const newJob = {
       title,
@@ -33,14 +33,14 @@ const AddJobPage = ({ addJobSubmit }: AddJobPageProps) => {
         contactEmail,
         contactPhone,
       },
-    }
+    };
 
-    addJobSubmit(newJob)
+    addJobSubmit(newJob);
 
-    toast.success('Job Added Successfully')
+    toast.success('Job Added Successfully');
 
-    return navigate('/jobs')
-  }
+    return navigate('/jobs');
+  };
 
   return (
     <section className="bg-indigo-50">
@@ -210,7 +210,7 @@ const AddJobPage = ({ addJobSubmit }: AddJobPageProps) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AddJobPage
+export default AddJobPage;

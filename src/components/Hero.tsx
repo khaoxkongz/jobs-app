@@ -1,4 +1,4 @@
-import { HeroProps } from '../interfaces/component'
+import { HeroProps } from '../interfaces/component';
 
 const Hero = ({ title = 'Become a React Dev', subtitle = 'Find the React job that fit your skill set' }: HeroProps) => {
   return (
@@ -10,7 +10,7 @@ const Hero = ({ title = 'Become a React Dev', subtitle = 'Find the React job tha
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

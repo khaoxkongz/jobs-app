@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import { FaMapMarker } from 'react-icons/fa'
-import { JobListingProps } from '../interfaces/component'
+import { FaMapMarker } from 'react-icons/fa';
+import { JobListingProps } from '../interfaces/component';
 
 const JobListing = ({ job }: JobListingProps) => {
-  const [showFullDescription, setShowFullDescription] = useState(false)
+  const [showFullDescription, setShowFullDescription] = useState(false);
 
-  let description = job.description
+  let description = job.description;
 
   if (!showFullDescription) {
-    description = description.substring(0, 90).concat('...')
+    description = description.substring(0, 90).concat('...');
   }
 
   return (
@@ -48,7 +48,7 @@ const JobListing = ({ job }: JobListingProps) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default JobListing
+export default JobListing;

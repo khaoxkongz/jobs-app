@@ -1,13 +1,13 @@
-import { ICreateJobDto, IUpdateJobDto } from './job.dto'
+import { ICreateJobDto, IUpdateJobDto } from './job.dto';
 
 export interface AddJobPageProps {
-  addJobSubmit: (newJob: ICreateJobDto) => Promise<void>
+  addJobSubmit: (newJob: ICreateJobDto) => Promise<void>;
 }
 
 export interface EditJobPageProps {
-  updateJobSubmit: (updatedJob: IUpdateJobDto) => Promise<void>
+  updateJobSubmit: (updatedJob: IUpdateJobDto) => Promise<void>;
 }
 
 export interface JobPageProps {
-  deleteJob: (jobid: string) => Promise<void>
+  deleteJob: (jobid: string) => Promise<void>;
 }

@@ -1,7 +1,7 @@
-import Hero from '../components/Hero'
-import HomeCards from '../components/HomeCards'
-import JobListings from '../components/JobListings'
-import ViewAllJobs from '../components/ViewAllJobs'
+import Hero from '../components/Hero';
+import HomeCards from '../components/HomeCards';
+import JobListings from '../components/JobListings';
+import ViewAllJobs from '../components/ViewAllJobs';
 
 const HomePage = () => {
   return (
@@ -11,7 +11,7 @@ const HomePage = () => {
       <JobListings isHome={true} />
       <ViewAllJobs />
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

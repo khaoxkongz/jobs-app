@@ -1,5 +1,5 @@
-import { FaExclamationTriangle } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { FaExclamationTriangle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const NotFound = () => {
   return (
@@ -11,7 +11,7 @@ const NotFound = () => {
         Go Back
       </Link>
     </section>
-  )
-}
+  );
+};
 
-export default NotFound
+export default NotFound;

@@ -1,15 +1,15 @@
-import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
-import { addJob, deleteJob, jobLoader, updateJob } from './hook'
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
+import { addJob, deleteJob, jobLoader, updateJob } from './hook';
 
-import MainLayout from './layouts/MainLayout'
-import HomePage from './pages/HomePage'
+import MainLayout from './layouts/MainLayout';
+import HomePage from './pages/HomePage';
 
-import JobsPage from './pages/JobsPage'
-import JobPage from './pages/JobPage'
-import AddJobPage from './pages/AddJobPage'
+import JobsPage from './pages/JobsPage';
+import JobPage from './pages/JobPage';
+import AddJobPage from './pages/AddJobPage';
 
-import NotFound from './components/NotFound'
-import EditJobPage from './pages/EditJobPage'
+import NotFound from './components/NotFound';
+import EditJobPage from './pages/EditJobPage';
 
 const App = () => {
   const router = createBrowserRouter(
@@ -23,9 +23,9 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
       </Route>
     )
-  )
+  );
 
-  return <RouterProvider router={router} />
-}
+  return <RouterProvider router={router} />;
+};
 
-export default App
+export default App;
